@@ -10,6 +10,10 @@ __global__ void sum_matrix(int* matrix_1, int* matrix_2, int* result) {
 int main(int argc, char** argv) {
     int dimension;
     
+    std::cout << "Insert matrix dimension : ";
+    std::cin >> dimension;
+    std::cout << std::endl;
+
     int* matrix = new int[dimension * dimension];
     int* matrix_2 = new int[dimension * dimension];
     int* result = new int[dimension * dimension];
@@ -17,10 +21,6 @@ int main(int argc, char** argv) {
     int* matrix_1_gpu;
     int* matrix_2_gpu;
     int* result_gpu;
-
-    std::cout << "Insert matrix dimension : ";
-    std::cin >> dimension;
-    std::cout << std::endl;
 
     std::cout << "Matrix 1: " << std::endl;
     ask_values(dimension, matrix);
